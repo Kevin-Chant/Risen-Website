@@ -1,0 +1,134 @@
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #333333;
+    width: 100%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    width: 8.5%;
+    color: #cccccc;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #999999;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #737373;
+}
+
+.tab .week-prefix {
+    background-color: inherit;
+}
+
+.tab .week-prefix:hover {
+    cursor: default;
+    background-color: inherit;
+}
+
+/* Style the tab content */
+.tabcontent {
+    border: 0px solid #ccc;
+    border-top: none;
+}
+
+.match-table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin-left:-35%;
+    margin-right:-35%;
+    left:50%;
+    position:fixed;
+    background-color: #333333;
+}
+.match-table td, .match-table th {
+    border: 0px solid #ddd;
+    padding: 0px;
+}
+.match-table nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.match-table th {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.match-container {
+    text-align: center;
+    color: #d9d9d9;
+}
+
+
+.match-container.extended{
+    background-color: #999999;
+    color: black;
+}
+
+.match-details {
+    display:block;
+}
+
+.match-details.hidden {
+    display:none;
+}
+
+.match-details-tab {
+    background-color:#999999;
+    float: center;
+}
+
+.match-details-tab button {
+    background-color: inherit;
+    float: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    width: 8.5%;
+    color: inherit;
+}
+
+.match-details-tab button:hover {
+    background-color:#666666;
+}
+.match-details-tab button.active {
+    background-color:#4d4d4d;
+}
+
+.match-details-container {
+    background-color:#999999;
+    float: center;
+    display: none;
+}
+
+.match-details-container.active {
+    display:block;
+}
+
+.draft-image {
+    max-height: 20%;
+    max-width: 20%;
+}
+
+.post-game-image {
+    max-height: 20%;
+    max-width: 20%;
+}
