@@ -25,7 +25,7 @@
 
 </head>
 
-<body onload="displayWeek(event, 1, 'Rampage');">
+<body onload="displayWeek(event, 1, 'Rampage');" id="matchresults-body">
 <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -65,10 +65,6 @@
 
 
 
-
-<h1>Risen Regular Season Match Results</h1>
-
-<div>
   <?php
 
   // Create connection to SQL server
@@ -123,8 +119,11 @@
   ?>
 </div>
 
+<div id="table-top-bar">
+<h1>Risen Regular Season Match Results</h1>
+<hr>
 <div>
-  League:
+  Choose your League:&emsp;
   <select id="league" onchange="displayWeek(event, null, this.options[this.selectedIndex].value);">
     <option value="Rampage">Rampage</option>
     <option value="Dominate">Dominate</option>
@@ -132,19 +131,19 @@
     <option value="Champions">Champions</option>
   </select>
 </div>
+</div>
 
 <div class="tab">
-  <button class="week-prefix">Week</button>
-  <button class="tablinks" id=1 onclick="displayWeek(event, 1, null);">1</button>
-  <button class="tablinks" id=2 onclick="displayWeek(event, 2, null);">2</button>
-  <button class="tablinks" id=3 onclick="displayWeek(event, 3, null);">3</button>
-  <button class="tablinks" id=4 onclick="displayWeek(event, 4, null);">4</button>
-  <button class="tablinks" id=5 onclick="displayWeek(event, 5, null);">5</button>
-  <button class="tablinks" id=6 onclick="displayWeek(event, 6, null);">6</button>
-  <button class="tablinks" id=7 onclick="displayWeek(event, 7, null);">7</button>
-  <button class="tablinks" id=8 onclick="displayWeek(event, 8, null);">8</button>
-  <button class="tablinks" id=9 onclick="displayWeek(event, 9, null);">9</button>
-  <button class="tablinks" id=10 onclick="displayWeek(event, 10, null);">10</button>
+  <button class="tablinks" id=1 onclick="displayWeek(event, 1, null);">Week 1</button>
+  <button class="tablinks" id=2 onclick="displayWeek(event, 2, null);">Week 2</button>
+  <button class="tablinks" id=3 onclick="displayWeek(event, 3, null);">Week 3</button>
+  <button class="tablinks" id=4 onclick="displayWeek(event, 4, null);">Week 4</button>
+  <button class="tablinks" id=5 onclick="displayWeek(event, 5, null);">Week 5</button>
+  <button class="tablinks" id=6 onclick="displayWeek(event, 6, null);">Week 6</button>
+  <button class="tablinks" id=7 onclick="displayWeek(event, 7, null);">Week 7</button>
+  <button class="tablinks" id=8 onclick="displayWeek(event, 8, null);">Week 8</button>
+  <button class="tablinks" id=9 onclick="displayWeek(event, 9, null);">Week 9</button>
+  <button class="tablinks" id=10 onclick="displayWeek(event, 10, null);">Week 10</button>
 </div>
 
 <div id="TableContainer" class="tabcontent">

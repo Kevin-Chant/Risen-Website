@@ -55,50 +55,78 @@ function displayWeek(evt, weekNum, league) {
           tab.className = "match-details-tab";
 
           var g1button = document.createElement("button");
-          g1button.className = "tablinks-match active";
+          g1button.className = "tablinks active";
           g1button.addEventListener('click', createButtonFocus(details, tab, g1button));
           g1button.innerHTML = "Game 1";
 
+          // Create game 1 container
           var g1contents = document.createElement("div");
           g1contents.className = "match-details-container active"
-          var draftimage1 = document.createElement("img");
-          draftimage1.className = "draft-image";
-          // TODO: streamline decoding &amp;
-          draftimage1.src = vals[5].replace("&amp;","&");
+          
+          // Wrap prodraft link with default image
+          var wrapped_draft_link1 = document.createElement("a");
+          var matchlink1 = document.createElement("img");
+          wrapped_draft_link1.href = vals[5];
+          matchlink1.src = "img/draft_img.png"            
+          wrapped_draft_link1.appendChild(matchlink1);
+
+          // Insert postgame image
           var postgameimage1 = document.createElement("img");
           postgameimage1.className = "post-game-image";
           postgameimage1.src = vals[6];
-          var matchlink1 = document.createElement("a");
-          matchlink1.href = vals[7];
-          matchlink1.innerHTML = "Match History";
-          g1contents.appendChild(draftimage1);
-          g1contents.appendChild(postgameimage1);
-          g1contents.appendChild(matchlink1);
 
+          // Wrap match history link with default image
+          var wrapped_hist_link1 = document.createElement("a");
+          var matchlink1 = document.createElement("img");
+          wrapped_hist_link1.href = vals[7];
+          matchlink1.src = "img/match_hist_img.png"            
+          wrapped_hist_link1.appendChild(matchlink1);
+          
+          // Add all 3 images to game 1 container
+          g1contents.appendChild(wrapped_draft_link1);
+          g1contents.appendChild(postgameimage1);
+          g1contents.appendChild(wrapped_hist_link1);
 
           var g2button = document.createElement("button");
-          g2button.className = "tablinks-match";
+          g2button.className = "tablinks";
           g2button.addEventListener('click', createButtonFocus(details, tab, g2button));
           g2button.innerHTML = "Game 2";
 
 
+          // Create game 2 container
           var g2contents = document.createElement("div");
           g2contents.className = "match-details-container"
-          var draftimage2 = document.createElement("img");
-          draftimage2.className = "draft-image";
-          // TODO: streamline decoding &amp;
-          draftimage2.src = vals[8].replace("&amp;","&");
+          
+
+
+          // Wrap prodraft link with default image
+          var wrapped_draft_link2 = document.createElement("a");
+          var matchlink2 = document.createElement("img");
+          wrapped_draft_link2.href = vals[8];
+          matchlink2.src = "img/draft_img.png"            
+          wrapped_draft_link2.appendChild(matchlink2);
+
+
+          // Insert postgame image
           var postgameimage2 = document.createElement("img");
           postgameimage2.className = "post-game-image";
           postgameimage2.src = vals[9];
-          var matchlink2 = document.createElement("a");
-          matchlink2.href = vals[10];
-          matchlink2.innerHTML = "Match History";
-          g2contents.appendChild(draftimage2);
+          
+          // Wrap match history link with default image
+          var wrapped_link2 = document.createElement("a");
+          var matchlink2 = document.createElement("img");
+          wrapped_link2.href = vals[10];
+          matchlink2.src = "img/match_hist_img.png"            
+          wrapped_link2.appendChild(matchlink2);
+          
+          // Add all 3 images to game 2 container
+          g2contents.appendChild(wrapped_draft_link2);
           g2contents.appendChild(postgameimage2);
-          g2contents.appendChild(matchlink2);
+          g2contents.appendChild(wrapped_link2);
 
+          // Add game 1 and 2 containers
           tab.appendChild(g1button);
+          tab.appendChild(document.createElement("vl"));
           tab.appendChild(g2button);
           details.appendChild(tab);
           details.appendChild(g1contents);
@@ -107,27 +135,40 @@ function displayWeek(evt, weekNum, league) {
           // If a game 3 occurred
           if (vals[11] != "") {
             var g3button = document.createElement("button");
-            g3button.className = "tablinks-match";
+            g3button.className = "tablinks";
             g3button.addEventListener('click', createButtonFocus(details, tab, g3button));
             g3button.innerHTML = "Game 3";
 
-
+            // Create game 3 container
             var g3contents = document.createElement("div");
             g3contents.className = "match-details-container"
-            var draftimage3 = document.createElement("img");
-            draftimage3.className = "draft-image";
-            // TODO: streamline decoding &amp;
-            draftimage3.src = vals[11].replace("&amp;","&");
+
+            // Wrap prodraft link with default image
+            var wrapped_draft_link3 = document.createElement("a");
+            var matchlink3 = document.createElement("img");
+            wrapped_draft_link3.href = vals[11];
+            matchlink3.src = "img/draft_img.png"            
+            wrapped_draft_link3.appendChild(matchlink3);
+            
+            // Insert postgame image
             var postgameimage3 = document.createElement("img");
             postgameimage3.className = "post-game-image";
             postgameimage3.src = vals[12];
-            var matchlink3 = document.createElement("a");
-            matchlink3.href = vals[13];
-            matchlink3.innerHTML = "Match History";
-            g3contents.appendChild(draftimage3);
-            g3contents.appendChild(postgameimage3);
-            g3contents.appendChild(matchlink3);
+            
+            // Wrap match history link with default image
+            var wrapped_link3 = document.createElement("a");
+            var matchlink3 = document.createElement("img");
+            wrapped_link3.href = vals[13];
+            matchlink3.src = "img/match_hist_img.png"            
+            wrapped_link3.appendChild(matchlink3);
 
+            // Add all 3 images to game 3 container
+            g3contents.appendChild(wrapped_draft_link3);
+            g3contents.appendChild(postgameimage3);
+            g3contents.appendChild(wrapped_link3);
+
+            // Add game 3 container
+            tab.appendChild(document.createElement("vl"));
             tab.appendChild(g3button);
             details.appendChild(g3contents);
           }
